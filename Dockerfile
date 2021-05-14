@@ -18,11 +18,11 @@ COPY ./requirements.txt .
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requirements.txt
 
 # lint
-COPY . /usr/src/app/
-RUN pip install black==20.8b1 flake8===3.8.4 isort==5.7.0
-RUN flake8 .
-RUN black --exclude=migrations .
-RUN isort .
+#COPY . /usr/src/app/
+#RUN pip install black==20.8b1 flake8===3.8.4 isort==5.7.0
+#RUN flake8 .
+#RUN black --exclude=migrations .
+#RUN isort .
 
 
 
