@@ -20,10 +20,12 @@ if __name__ == '__main__':
         dst = sanitize_filepath(sys.argv[3])
         model = sanitize_filepath(sys.argv[4])
         if os.path.isdir("code/{code}".format(code=code)):
-            destination = shutil.copytree("code/{code}".format(code=code), "local")
+            destination = shutil.copytree("code/{code}"
+                                          .format(code=code), "local")
             print("destination: ", destination)
             os.chdir(destination)
-            os.system("python main.py {src} {dst} {model}".format(src=src, dst=dst, model=model))
+            os.system("python main.py {src} {dst} {model}"
+                      .format(src=src, dst=dst, model=model))
         else:
             print("check parameters:", code, src, dst, model)
     else:
