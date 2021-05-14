@@ -36,8 +36,8 @@ RUN addgroup --system app && adduser --system --group app
 
 # create the appropriate directories
 ENV HOME=/home/app
-RUN mkdir $APP
-WORKDIR $APP
+RUN mkdir $HOME/src
+WORKDIR $HOME/src
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
