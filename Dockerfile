@@ -55,7 +55,6 @@ COPY --from=builder /usr/src/app/wheels /wheels
 COPY --from=builder /usr/src/app/requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --no-cache /wheels/*
-RUN pip install "uvicorn[standard]==0.13.4"
 
 # add app
 COPY . .
@@ -66,5 +65,5 @@ RUN chown -R app:app $HOME
 # change to the app user
 USER app
 
-# run gunicorn
-#CMD gunicorn --bind 0.0.0.0:$PORT app.main:app -k uvicorn.workers.UvicornWorker
+ENTRYPOINT ["python3"]
+CMD ["boot.py"]
