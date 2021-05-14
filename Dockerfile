@@ -67,4 +67,4 @@ RUN chown -R app:app $HOME
 USER app
 
 # run gunicorn
-CMD gunicorn --bind 0.0.0.0:$PORT app.main:app -k uvicorn.workers.UvicornWorker
+#CMD gunicorn --bind 0.0.0.0:$PORT app.main:app -k uvicorn.workers.UvicornWorker
